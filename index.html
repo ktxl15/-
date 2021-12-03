@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>蜂鸟</title>
+		<link rel="stylesheet" type="text/css" href="css/MAIN.css"/>
+	</head>
+	<body>
+		<div class="top">
+			</div>
+			<div class="toptext">
+				<div class="yuan"></div>
+					<img src="img/可爱的.png" class="topimge">
+				<h1>"真実の愛が色であれば"</h1>
+				<div class="navi"></div>
+				<div class="navi1"></div>
+			</div>
+			<div class="nvi">
+				<div class="nvi-w">
+				<div class="logo"><img src="img/21.png" class="xz"></div>
+				<div class="logotext"><i>tatakai</i></div>
+				<ul class="nviul">
+					<li class="nvili">ホーム</li>
+					<li class="nvili">コンテンツ</li>
+					<li class="nvili">連絡先</li>
+					<li class="nvili">終了</li>
+				</ul>
+				</div> 
+			</div>
+			<div class="content">
+					<div class="contentbox"></div>
+					<div class="contentbox1"></div>
+					<p class="warp">This My last War</p>
+			<div class="contwarall">
+				<div class="contwar">
+					
+				</div>
+			</div>
+			</div>
+			
+				<div class="aboutme">
+					<div class="aboutall">
+					<ul class="aboutul">
+						<li class="aboutli"><img src="img/am.png" class="liimg"></li>
+						<li class="aboutli"><img src="img/f.png" class="liimg"></li>
+						<li class="aboutli"><img src="img/sanjiu.png" class="liimg"></li>
+						<li class="aboutli"><img src="img/al.png" class="liimg"></li>
+					</ul>
+				</div>
+				<div class="ableft"></div>
+				<div class="abright"></div>
+				<div class="abouttext">This's my lover</div>
+			</div>
+				<div class="big">
+					<div class="bigmask"></div>
+					 <div class="big-w">
+						 <div class="bigtext">[ I can help you ]</div>
+						 <div class="big-box"></div>
+					 </div>
+				</div>
+				
+				<div class="foot">
+					<div class="foot-w">
+						<div class="fontone">
+							<img src="img/bilibili-line.png" >
+							<img src="img/instagram.png" >
+							<img src="img/steam.png" >
+						</div>
+						<div class="fonttwo">
+							<div class="fotint">
+								<input type="text" placeholder="Enter your E-mail">
+								<button type="button">search</button>
+							</div>
+						</div>
+						<div class="fontthere">
+							"Thank you for watching"
+						</div>
+					</div>
+				</div>
+				
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.toptext').hover(function(){
+			$('.top').addClass('topadd')
+			$('.toptext h1').addClass('addfont')
+			$('.left').addClass('addleft')
+			$('.right').addClass('addright')
+			$('.navi').addClass('addnavi')
+			$('.navi1').addClass('addnavi1')
+			$('.yuan').addClass('addyuan')
+			$('.topimge').addClass('addimg')
+		},function(){
+			$('.top').removeClass('topadd')
+			$('.toptext h1').removeClass('addfont')
+			$('.left').removeClass('addleft')
+			$('.right').removeClass('addright')
+			$('.navi').removeClass('addnavi')
+			$('.navi1').removeClass('addnavi1')
+			$('.yuan').removeClass('addyuan')
+			$('.topimge').removeClass('addimg')
+		})
+		$(window).scroll(function(){
+		var top = $(window).scrollTop()
+		var hei = $('.top').height()
+		if(top>hei){
+			$('.contwarall').css({'height':'600px','opacity':'1'})
+			$('.warp').css({'opacity':'1'})
+			$('.nvi').addClass('nviadd')
+			$('.logotext').addClass('addtext')
+			
+		}else{
+			$('.nvi').removeClass('nviadd')
+			$('.logotext').removeClass('addtext')
+		}
+		})
+		
+		var index=0
+		$('.ableft').click(function(){
+			index--;
+			if(index<0){
+				index=3
+			}
+			$('.aboutul').css({'margin-left':index*-$('.liimg').width()+'px'})
+			console.log(index)
+		})
+		$('.abright').click(function(){
+			index++;
+			if(index>3){
+				index=0
+			}
+			$('.aboutul').css({'margin-left':index*-$('.liimg').width()+'px'})
+			console.log(index)
+		})
+	})
+	$('.nvili').click(function(){
+		cik=$(this).index()
+		var to=cik*900+'px'
+		$('html,body').animate({'scrollTop':to},700)
+		$('.nvili').eq(cik).addClass('addli').siblings().removeClass('addli')
+	})
+	$(window).scroll(function(){
+		var top = $(window).scrollTop()
+		var c  = top/900
+		var f = Math.ceil(c)
+		console.log(f)
+		$('.nvili').removeClass('addli')
+		$('.nvili').eq(f).addClass('addli')
+	})
+	</script>
+</html>
